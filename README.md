@@ -2,7 +2,7 @@
 
 A WooCommerce plugin for importing and syncing products from CSV files or a REST API. Every row is validated before it touches the store, valid rows are processed in background batches with Action Scheduler, and each row's outcome is kept in an import log you can review, export and re-run.
 
-![CI](https://github.com/jeetpatel/wc-product-sync/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/JeetPatel1016/wc-product-sync/actions/workflows/ci.yml/badge.svg)
 
 ## Why
 
