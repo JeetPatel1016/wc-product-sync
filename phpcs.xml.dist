@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<ruleset name="WC Product Sync">
+    <description>WordPress Coding Standards for WC Product Sync.</description>
+
+    <file>wc-product-sync.php</file>
+    <file>uninstall.php</file>
+    <file>src</file>
+
+    <arg name="extensions" value="php"/>
+    <arg value="sp"/>
+
+    <config name="minimum_wp_version" value="6.4"/>
+    <config name="testVersion" value="8.1-"/>
+
+    <rule ref="WordPress-Extra">
+        <!-- PSR-4 file names (ClassName.php) instead of class-name.php. -->
+        <exclude name="WordPress.Files.FileName"/>
+        <!-- Short class/method docblocks are fine where types say it all. -->
+        <exclude name="Squiz.Commenting.FunctionComment.Missing"/>
+        <exclude name="Squiz.Commenting.ClassComment.Missing"/>
+        <exclude name="Squiz.Commenting.VariableComment.Missing"/>
+        <exclude name="Generic.Commenting.DocComment.MissingShort"/>
+    </rule>
+
+    <!-- Exceptions are data, not output: their messages are escaped where they
+         are displayed (esc_html in the admin screen, JSON in the REST API). -->
+    <rule ref="WordPress.Security.EscapeOutput.ExceptionNotEscaped">
+        <severity>0</severity>
+    </rule>
+
+    <!-- The CSV parser is framework-free so it can be unit tested without
+         WordPress; it reads local temp/upload files, not remote URLs. -->
+    <rule ref="WordPress.WP.AlternativeFunctions">
+        <exclude-pattern>src/Import/CsvParser.php</exclude-pattern>
+    </rule>
+
+    <rule ref="WordPress.WP.Capabilities">
+        <properties>
+            <property name="custom_capabilities" type="array">
+                <element value="manage_woocommerce"/>
+            </property>
+        </properties>
+    </rule>
+
+    <rule ref="WordPress.WP.I18n">
+        <properties>
+            <property name="text_domain" type="array">
+                <element value="wc-product-sync"/>
+            </property>
+        </properties>
+    </rule>
+
+    <rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+        <properties>
+            <property name="prefixes" type="array">
+                <element value="wcps"/>
+                <element value="WCPS"/>
+            </property>
+        </properties>
+    </rule>
+</ruleset>
