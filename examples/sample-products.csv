@@ -1,0 +1,9 @@
+sku,name,regular_price,sale_price,stock_quantity,status,weight,categories,short_description
+TEE-BLK-M,Classic Tee - Black (M),24.99,19.99,40,publish,0.2,Clothing > T-Shirts,Soft cotton crew neck tee.
+TEE-WHT-M,Classic Tee - White (M),24.99,,35,publish,0.2,Clothing > T-Shirts,Soft cotton crew neck tee.
+HOOD-GRY-L,Pullover Hoodie - Grey (L),"$1,049.00",,12,publish,0.6,Clothing > Hoodies | Sale,Heavyweight fleece hoodie.
+MUG-001,Ceramic Mug,14,16,100,publish,0.4,Home > Kitchen,Sale price is higher than regular price - fails validation.
+,Missing SKU Poster,9.99,,5,publish,,Home > Decor,No SKU - fails validation.
+CAP-BLU,Baseball Cap - Blue,18,,-3,draft,0.1,Accessories,Negative stock - fails validation.
+TEE-BLK-M,Classic Tee - Black (M) duplicate,24.99,,10,publish,0.2,Clothing > T-Shirts,Duplicate SKU in the same file - fails validation.
+BAG-TOTE,Canvas Tote Bag,29,,60,publish,0.3,Accessories | Sale,Everyday canvas tote.
